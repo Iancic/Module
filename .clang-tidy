@@ -1,0 +1,5 @@
+Checks: >
+  -*, bugprone-*, performance-*, modernize-*, readability-*, -modernize-use-trailing-return-type, -readability-magic-numbers,
+HeaderFilterRegex: '.*/(src|include)/.*'
+WarningsAsErrors: ''
+FormatStyle: file

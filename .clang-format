@@ -1,0 +1,7 @@
+Language: Cpp
+BasedOnStyle: GNU
+IndentWidth: 4
+ColumnLimit: 120
+BreakBeforeBraces: Allman
+PointerAlignment: Left
+SortIncludes: CaseSensitive

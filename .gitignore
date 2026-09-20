@@ -1,69 +1,50 @@
-# Prerequisites
-*.d
+##
+## Ignored Files
+## 
 
-# Compiled Object files
-*.slo
-*.lo
+# Engine Folders
+build/
+build-*/
+out/
+bin/
+obj/
+x64/
+x86/
+
+# C++ Compiler Output
 *.o
 *.obj
-
-# Precompiled Headers
-*.gch
 *.pch
-
-# Linker files
+*.gch
+*.ipch
 *.ilk
-
-# Debugger Files
 *.pdb
+*.idb
+*.tlog
+*.exp
 
-# Compiled Dynamic libraries
-*.so
-*.dylib
-*.dll
-*.so.*
+# Visual Studio
+.vs/
+*.suo
+*.user
+*.vcxproj.user
+*.sdf
+*.opensdf
+*.VC.db
+*.VC.opendb
 
+# Other IDEs and OS files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
 
-# Fortran module files
-*.mod
-*.smod
+# Claude Cache Files
+.claude/
 
-# Compiled Static libraries
-*.lai
-*.la
-*.a
-*.lib
+##
+## Un-Ignored Files
+##
 
-# Executables
-*.exe
-*.out
-*.app
-
-# Build directories
-build/
-Build/
-build-*/
-
-# CMake generated files
-CMakeFiles/
-CMakeCache.txt
-cmake_install.cmake
-Makefile
-install_manifest.txt
-compile_commands.json
-
-# Temporary files
-*.tmp
-*.log
-*.bak
-*.swp
-
-# vcpkg
-vcpkg_installed/
-
-# debug information files
-*.dwo
-
-# test output & cache
-Testing/
-.cache/
+## Premake Executable
+!premake/premake5.exe

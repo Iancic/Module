@@ -1,0 +1,4 @@
+CompileFlags:
+    CompilationDatabase: premake # Where to look for compile_commands.json
+Diagnostics:
+    UnusedIncludes: Strict
