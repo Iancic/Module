@@ -2,7 +2,7 @@ project "Input"
     kind "SharedLib"
     language "C++"
     cppdialect "C++23"
-    files { "**.cpp", "**.h" }
+    files  { "**.cpp", "**.h", "**.hpp" }
     includedirs { "public", "private" }
 
     usage "PUBLIC"

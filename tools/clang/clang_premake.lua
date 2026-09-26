@@ -1,7 +1,6 @@
 require "ecc/ecc"
 
 -- Only the engine code is linted/formatted.
--- Vendor code under vendor/ is never touched.
 local MODULE_ROOTS = { "engine/modules", "engine/editor" }
 local CLANG_FORMAT_CONFIG = path.join(_MAIN_SCRIPT_DIR, "tools/clang/.clang-format")
 local CLANG_TIDY_CONFIG   = path.join(_MAIN_SCRIPT_DIR, "tools/clang/.clang-tidy")
