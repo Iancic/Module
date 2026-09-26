@@ -1,0 +1,4 @@
+CompileFlags:
+    CompilationDatabase: . # premake5 ecc writes compile_commands.json to the repo root
+Diagnostics:
+    UnusedIncludes: Strict

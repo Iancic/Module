@@ -1,2 +1,1 @@
-﻿#pragma once
-#include "scene.hpp"
+﻿#include "scene.hpp"

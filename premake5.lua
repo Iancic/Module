@@ -1,44 +1,40 @@
-require "ecc/ecc"
+-- Clang tooling
+include "tools/clang/clang_premake.lua"
 
---- CLANG: Tidy, Format
---- Run: premake5 format
---- Like running: clang-format -p . src/Renderer.cpp
---- But for every source and hpp file
-newaction{
-    trigger = "format",
-    description = "Run clang format on all source files.",
-    execute = function ()
-        local files = table.join(os.matchfiles("src/**.cpp"), os.matchfiles("src/**.hpp"))
-        for _, f in ipairs(files) do
-            os.execute("clang-format -i" .. f)
-        end
-    end
-}
-
---- Run: premake5 tidy
---- Like running: clang-tidy -p . src/Renderer.cpp
---- But for every source and hpp file
-newaction{
-    trigger = "tidy",
-    description = "Run clang tidy on all source files.",
-    execute = function()
-        local files = table.join(os.matchfiles("src/**.cpp"), os.matchfiles("src/**.hpp"))
-        for _, f in ipairs(files) do
-            os.execute("clang-tidy -p" .. f)
-        end
-    end
-}
-
--- Add other platforms here:
+-- Platforms
 local has_prospero = os.isfile("platform/prospero/prospero.lua")
 
 -- Workspace
 workspace "Module"
-    configurations {debug, release, development}
+    configurations {"debug", "release", "development"}
     platforms {"x64"}
-    startproject "engine"
+    architecture "x86_64"
+    startproject "Module"
     location "build/vs"
+
+    filter "configurations:debug"
+        symbols "On"
+
+    filter "configurations:development"
+        symbols "On"
+        optimize "On"
+
+    filter "configurations:release"
+        symbols "Off"
+        optimize "On"
 
     if has_prospero then
         platforms{"prospero"}
     end
+
+-- Modules
+include "engine/modules/rendering/renderer/renderer_premake.lua"
+include "engine/modules/rendering/render_graph/render_graph.lua"
+include "engine/modules/rendering/rendering_hardware_interface/rendering_hardware_interface_premake.lua"
+include "engine/modules/physics/physics_premake.lua"
+include "engine/modules/core/core_premake.lua"
+include "engine/modules/audio/audio_premake.lua"
+include "engine/modules/input/input_premake.lua"
+include "engine/modules/scene/scene_premake.lua"
+include "engine/modules/window/window_premake.lua"
+include "engine/editor/editor_premake.lua"

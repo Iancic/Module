@@ -1,4 +1,4 @@
-project "Window"
+project "Rendering Hardware Interface"
     kind "SharedLib"
     language "C++"
     cppdialect "C++23"
@@ -7,4 +7,4 @@ project "Window"
 
     usage "PUBLIC"
         includedirs { "%{prj.location}/public" }
-        links { "Window" }
+        links { "Rendering Hardware Interface" }
