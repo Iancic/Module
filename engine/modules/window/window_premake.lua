@@ -1,5 +1,5 @@
 project "Window"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
     cppdialect "C++23"
     files { "**.cpp", "**.h", "**.hpp" }
@@ -7,7 +7,8 @@ project "Window"
     if has_windows then
         UseVendor("SDL3")
     end
+    uses { "Core" }
+    links { "Core" }
 
     usage "PUBLIC"
-        includedirs { "%{prj.location}/public" }
-        links { "Window" }
+        includedirs { _SCRIPT_DIR .. "/public" }

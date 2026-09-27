@@ -1,5 +1,5 @@
 project "Core"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
     cppdialect "C++23"
     files  { "**.cpp", "**.h", "**.hpp" }
@@ -7,7 +7,5 @@ project "Core"
     UseVendor("EnTT")
 
     usage "PUBLIC"
-        includedirs { "%{prj.location}/public" }
-        links { "Core" }
-
-    uses { "Renderer", "Physics" }
+        includedirs { _SCRIPT_DIR .. "/public" }
+        UseVendor("EnTT")

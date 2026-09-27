@@ -27,7 +27,7 @@ public:
 
 class module_context {
 public:
-    explicit module_context(entt::registry& reg, entt::registry& asset_reg, const ModuleAccess* access)
+    explicit module_context(entt::registry& reg, entt::registry& asset_reg, const module_access* access)
         : m_registry(reg), m_asset_registry(asset_reg), m_access(access) {}
 
     template<typename T, typename... Args>

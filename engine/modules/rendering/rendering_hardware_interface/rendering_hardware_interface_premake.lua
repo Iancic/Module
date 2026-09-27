@@ -1,10 +1,9 @@
 project "Rendering Hardware Interface"
-    kind "SharedLib"
+    kind "StaticLib"
     language "C++"
     cppdialect "C++23"
     files  { "**.cpp", "**.h", "**.hpp" }
     includedirs { "public", "private" }
 
     usage "PUBLIC"
-        includedirs { "%{prj.location}/public" }
-        links { "Rendering Hardware Interface" }
+        includedirs { _SCRIPT_DIR .. "/public" }

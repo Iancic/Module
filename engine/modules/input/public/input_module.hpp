@@ -1,5 +1,5 @@
 #pragma once
-#include <core/module.hpp>
+#include <module.hpp>
 
 class input_module : public module {
 public:

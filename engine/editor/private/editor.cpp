@@ -1,1 +1,1 @@
-#include "editor/editor.hpp"
+#include "editor.hpp"
