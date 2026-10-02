@@ -14,7 +14,6 @@ if has_windows then
 end
 
 Vendor["FMOD"] = { includedirs = { "vendor/fmod" } }
-
 Vendor["Jolt"]         = { includedirs = { "vendor" } }
 Vendor["glm"]          = { includedirs = { "vendor" } }
 Vendor["fmt"]          = { includedirs = { "vendor/fmt/include" } }
